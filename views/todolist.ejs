@@ -1,0 +1,26 @@
+<%- include('partials/header')  -%>
+    
+ <div class="box" id="heading" >
+  <h1><%= toDay %></h1>
+  </div>
+  <div class="box"  >
+   
+       <% for(let i=0; i<newList.length; i++){%> 
+     <div class="item">
+       <input type="checkbox">
+      <p id="list-p"><%=newList[i] %></p>
+     </div>
+       
+    <%}%>
+
+    <form class="item"  action="/todolist" method="POST">
+      <div class="form-group">
+          <input  name="inputName" type="text"  class="form-control"  placeholder="New item">
+         </div>
+        <button id="btn" type="submit" name="list"   class="btn btn-primary">Add</button>
+      </form>
+   
+  </div>
+
+
+<%- include('partials/footer')  -%>
